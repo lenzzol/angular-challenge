@@ -10,18 +10,16 @@ export class CustomDirectiveComponent implements OnInit {
   @Input()
   values: DropdownModel[];
 
-  // @Input()
-  // value: DropdownModel[];
-
-  // @Output()
-  // valueChange: EventEmitter<any>;
+  @Output()
+  valueChange: EventEmitter<DropdownModel>;
 
   ngOnInit() {
   }
 
-  // select(value) {
-  //   this.valueChange.emit(value);
-  // }
+  select(value: DropdownModel) {
+    this.valueChange.emit(value);
+  }
 }
+
 
 

@@ -1,1 +1,8 @@
-<app-custom-directive [values]="models"></app-custom-directive>
+<app-custom-directive [values]="cars" (select)="onManufacturerSelected" ></app-custom-directive>
+<div *ngIf="selectedCar && selectedCar.manufacturModels">
+  <app-custom-directive [values]="selectedCar?.manufacturModels" (select)="onModelSelected" ></app-custom-directive>
+  <hr>
+  <p>The model selected is: {{selectedModel?.name}}</p>
+  <img [src]="selectedModel?.modelImage">
+</div>
+
